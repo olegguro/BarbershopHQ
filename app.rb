@@ -14,5 +14,8 @@ class Barber < ActiveRecord::Base
 end
 
 get '/' do
+	#вывод списка из БД
+	@barbers = Barber.all
+	
 	erb :index		
 end
