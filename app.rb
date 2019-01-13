@@ -7,7 +7,7 @@ require 'sinatra/activerecord'
 #подключение к БД
 set :database, "sqlite3:barbershop.db"
 
-class Client < activeRecord::Base
+class Client < ActiveRecord::Base
 end
 
 get '/' do
