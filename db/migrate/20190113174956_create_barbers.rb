@@ -6,7 +6,7 @@ class CreateBarbers < ActiveRecord::Migration[5.2]
   		t.timestamps
   	
   		end
-	
+	#создаем наполнение в таблице
 	Barber.create :name => 'Jessie Pinkman'  
 	Barber.create :name => 'Walter White'
 	Barber.create :name => 'Gus Fring'
