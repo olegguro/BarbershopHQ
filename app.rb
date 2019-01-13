@@ -13,9 +13,21 @@ end
 class Barber < ActiveRecord::Base
 end
 
-get '/' do
+before do
 	#вывод списка из БД
 	@barbers = Barber.all
-	
+end
+
+get '/' do
 	erb :index		
+end
+
+get '/visit' do
+	erb :visit
+end
+
+post '/visit' do
+
+		erb "<h2>Спасибо, вы записались!</h2>"
+	
 end
