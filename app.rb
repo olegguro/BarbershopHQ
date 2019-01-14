@@ -27,18 +27,19 @@ get '/' do
 end
 
 get '/visit' do
+	@c = Client.new
 	erb :visit
 end
 
 post '/visit' do
 	
-	c = Client.new params[:client]
-	if c.save
+	@c = Client.new params[:client]
+	if @c.save
 		erb "<h2>Спасибо, вы записались!</h2>"
 	else
 		#выводим сообщение об ошибке - в модели "c" есть ствойство errors, у него есть массив
 		# в классе массива есть метод first - 1-й элемент массива
-		@error = c.errors.full_messages.first
+		@error = @c.errors.full_messages.first
 		erb :visit
 	end
 end
