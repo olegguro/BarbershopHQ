@@ -36,6 +36,9 @@ post '/visit' do
 	if c.save
 		erb "<h2>Спасибо, вы записались!</h2>"
 	else
-		erb "<h2>Ошибка<h2>"
+		#выводим сообщение об ошибке - в модели "c" есть ствойство errors, у него есть массив
+		# в классе массива есть метод first - 1-й элемент массива
+		@error = c.errors.full_messages.first
+		erb :visit
 	end
 end
